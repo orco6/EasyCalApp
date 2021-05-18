@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EasyCalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="SerialNum" />
+    </Key>
+    <Property Name="SerialNum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Description" Type="text" />
+  </EntityType>
+  <EntityType Name="Exams">
+    <Key>
+      <PropertyRef Name="CourseName" />
+    </Key>
+    <Property Name="CourseName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lecturer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tasks1">
+    <Key>
+      <PropertyRef Name="SerialNum" />
+    </Key>
+    <Property Name="SerialNum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TaskName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="SubmitTime" Type="time" Precision="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AcademicYear" Type="tinyint" />
+    <Property Name="Member" Type="bit" />
+    <Property Name="PremCode" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EasyCalModelStoreContainer">
+    <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Exams" EntityType="Self.Exams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tasks1" EntityType="Self.Tasks1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,14 @@
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\bin\Release\EasyCalProj.exe.config
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\bin\Release\EasyCalProj.exe
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\bin\Release\EasyCalProj.pdb
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\bin\Release\EntityFramework.dll
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\bin\Release\EntityFramework.xml
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\obj\Release\EasyCalProj.Form1.resources
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\obj\Release\EasyCalProj.Form2.resources
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\obj\Release\EasyCalProj.Properties.Resources.resources
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\obj\Release\EasyCalProj.csproj.GenerateResource.Cache
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\obj\Release\EasyCalProj.exe
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\obj\Release\EasyCalProj.pdb
+C:\Users\nadav\Desktop\תרגילים\EasyCalProj\EasyCalProj\obj\Release\EasyCalProj.csprojResolveAssemblyReference.cache

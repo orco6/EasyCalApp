@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EasyCalModelStoreContainer" CdmEntityContainer="EasyCalEntities">
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="EasyCalModel.Event">
+        <MappingFragment StoreEntitySet="Events">
+          <ScalarProperty Name="SerialNum" ColumnName="SerialNum" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exams">
+      <EntityTypeMapping TypeName="EasyCalModel.Exam">
+        <MappingFragment StoreEntitySet="Exams">
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="Lecturer" ColumnName="Lecturer" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks1">
+      <EntityTypeMapping TypeName="EasyCalModel.Tasks1">
+        <MappingFragment StoreEntitySet="Tasks1">
+          <ScalarProperty Name="SerialNum" ColumnName="SerialNum" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SubmitTime" ColumnName="SubmitTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="EasyCalModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="AcademicYear" ColumnName="AcademicYear" />
+          <ScalarProperty Name="Member" ColumnName="Member" />
+          <ScalarProperty Name="PremCode" ColumnName="PremCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EasyCalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="SerialNumber" />
+    </Key>
+    <Property Name="SerialNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ActivityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="StartTime" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Endtime" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Events1">
+    <Key>
+      <PropertyRef Name="SerialNumber" />
+    </Key>
+    <Property Name="SerialNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="StartTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Exams1">
+    <Key>
+      <PropertyRef Name="Course" />
+    </Key>
+    <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Lecturer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="StartTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EndTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lecturer">
+    <Key>
+      <PropertyRef Name="LecturerName" />
+    </Key>
+    <Property Name="LecturerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecpHours" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Marathone">
+    <Key>
+      <PropertyRef Name="SerialNumber" />
+    </Key>
+    <Property Name="SerialNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LecturerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StartTime" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tasks1">
+    <Key>
+      <PropertyRef Name="SerialNum" />
+    </Key>
+    <Property Name="SerialNum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TaskName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SubmitTime" Type="Time" Nullable="false" Precision="5" />
+  </EntityType>
+  <EntityType Name="TimeTable">
+    <Key>
+      <PropertyRef Name="CourseName" />
+    </Key>
+    <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AcademicYear" Type="Int32" />
+    <Property Name="LecturerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Day" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="StartTime" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AcademicYear" Type="Byte" />
+    <Property Name="Member" Type="Boolean" />
+    <Property Name="PremCode" Type="Byte" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EasyCalEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Activities" EntityType="Self.Activity" />
+    <EntitySet Name="Events1" EntityType="Self.Events1" />
+    <EntitySet Name="Exams1" EntityType="Self.Exams1" />
+    <EntitySet Name="Lecturers" EntityType="Self.Lecturer" />
+    <EntitySet Name="Marathones" EntityType="Self.Marathone" />
+    <EntitySet Name="Tasks1" EntityType="Self.Tasks1" />
+    <EntitySet Name="TimeTables" EntityType="Self.TimeTable" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+  </EntityContainer>
+</Schema>

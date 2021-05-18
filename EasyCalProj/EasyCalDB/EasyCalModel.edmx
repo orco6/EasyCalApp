@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EasyCalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Activities">
+          <Key>
+            <PropertyRef Name="SerialNumber" />
+          </Key>
+          <Property Name="SerialNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActivityName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="date" />
+          <Property Name="StartTime" Type="nvarchar" MaxLength="8" />
+          <Property Name="Endtime" Type="nvarchar" MaxLength="8" />
+          <Property Name="Location" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Events1">
+          <Key>
+            <PropertyRef Name="SerialNumber" />
+          </Key>
+          <Property Name="SerialNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="date" />
+          <Property Name="StartTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="EndTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="text" />
+        </EntityType>
+        <EntityType Name="Exams1">
+          <Key>
+            <PropertyRef Name="Course" />
+          </Key>
+          <Property Name="Course" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lecturer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="StartTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EndTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lecturers">
+          <Key>
+            <PropertyRef Name="LecturerName" />
+          </Key>
+          <Property Name="LecturerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Department" Type="nvarchar" MaxLength="50" />
+          <Property Name="Course" Type="nvarchar" MaxLength="50" />
+          <Property Name="RecpHours" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Marathones">
+          <Key>
+            <PropertyRef Name="SerialNumber" />
+          </Key>
+          <Property Name="SerialNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="LecturerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartTime" Type="nvarchar" MaxLength="8" />
+          <Property Name="EndTime" Type="nvarchar" MaxLength="8" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="Location" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tasks1">
+          <Key>
+            <PropertyRef Name="SerialNum" />
+          </Key>
+          <Property Name="SerialNum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Course" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TaskName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="SubmitTime" Type="time" Precision="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TimeTable">
+          <Key>
+            <PropertyRef Name="CourseName" />
+          </Key>
+          <Property Name="CourseName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AcademicYear" Type="int" />
+          <Property Name="LecturerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Day" Type="nvarchar" MaxLength="10" />
+          <Property Name="StartTime" Type="nvarchar" MaxLength="8" />
+          <Property Name="EndTime" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AcademicYear" Type="tinyint" />
+          <Property Name="Member" Type="bit" />
+          <Property Name="PremCode" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EasyCalModelStoreContainer">
+          <EntitySet Name="Activities" EntityType="Self.Activities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Events1" EntityType="Self.Events1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Exams1" EntityType="Self.Exams1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lecturers" EntityType="Self.Lecturers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marathones" EntityType="Self.Marathones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tasks1" EntityType="Self.Tasks1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimeTable" EntityType="Self.TimeTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EasyCalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="SerialNumber" />
+          </Key>
+          <Property Name="SerialNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActivityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="StartTime" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Endtime" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Events1">
+          <Key>
+            <PropertyRef Name="SerialNumber" />
+          </Key>
+          <Property Name="SerialNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="StartTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EndTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Exams1">
+          <Key>
+            <PropertyRef Name="Course" />
+          </Key>
+          <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Lecturer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StartTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EndTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lecturer">
+          <Key>
+            <PropertyRef Name="LecturerName" />
+          </Key>
+          <Property Name="LecturerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RecpHours" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Marathone">
+          <Key>
+            <PropertyRef Name="SerialNumber" />
+          </Key>
+          <Property Name="SerialNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LecturerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartTime" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="EndTime" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tasks1">
+          <Key>
+            <PropertyRef Name="SerialNum" />
+          </Key>
+          <Property Name="SerialNum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TaskName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SubmitTime" Type="Time" Nullable="false" Precision="5" />
+        </EntityType>
+        <EntityType Name="TimeTable">
+          <Key>
+            <PropertyRef Name="CourseName" />
+          </Key>
+          <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AcademicYear" Type="Int32" />
+          <Property Name="LecturerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Day" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="StartTime" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="EndTime" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AcademicYear" Type="Byte" />
+          <Property Name="Member" Type="Boolean" />
+          <Property Name="PremCode" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EasyCalEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Activities" EntityType="Self.Activity" />
+          <EntitySet Name="Events1" EntityType="Self.Events1" />
+          <EntitySet Name="Exams1" EntityType="Self.Exams1" />
+          <EntitySet Name="Lecturers" EntityType="Self.Lecturer" />
+          <EntitySet Name="Marathones" EntityType="Self.Marathone" />
+          <EntitySet Name="Tasks1" EntityType="Self.Tasks1" />
+          <EntitySet Name="TimeTables" EntityType="Self.TimeTable" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EasyCalModelStoreContainer" CdmEntityContainer="EasyCalEntities1">
+          <EntitySetMapping Name="Activities">
+            <EntityTypeMapping TypeName="EasyCalModel.Activity">
+              <MappingFragment StoreEntitySet="Activities">
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="Endtime" ColumnName="Endtime" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events1">
+            <EntityTypeMapping TypeName="EasyCalModel.Events1">
+              <MappingFragment StoreEntitySet="Events1">
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Exams1">
+            <EntityTypeMapping TypeName="EasyCalModel.Exams1">
+              <MappingFragment StoreEntitySet="Exams1">
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="Lecturer" ColumnName="Lecturer" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lecturers">
+            <EntityTypeMapping TypeName="EasyCalModel.Lecturer">
+              <MappingFragment StoreEntitySet="Lecturers">
+                <ScalarProperty Name="LecturerName" ColumnName="LecturerName" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="RecpHours" ColumnName="RecpHours" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Marathones">
+            <EntityTypeMapping TypeName="EasyCalModel.Marathone">
+              <MappingFragment StoreEntitySet="Marathones">
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LecturerName" ColumnName="LecturerName" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tasks1">
+            <EntityTypeMapping TypeName="EasyCalModel.Tasks1">
+              <MappingFragment StoreEntitySet="Tasks1">
+                <ScalarProperty Name="SerialNum" ColumnName="SerialNum" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SubmitTime" ColumnName="SubmitTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeTables">
+            <EntityTypeMapping TypeName="EasyCalModel.TimeTable">
+              <MappingFragment StoreEntitySet="TimeTable">
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="AcademicYear" ColumnName="AcademicYear" />
+                <ScalarProperty Name="LecturerName" ColumnName="LecturerName" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="EasyCalModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="AcademicYear" ColumnName="AcademicYear" />
+                <ScalarProperty Name="Member" ColumnName="Member" />
+                <ScalarProperty Name="PremCode" ColumnName="PremCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
